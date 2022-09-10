@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOHO | Todo</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <span>Todo</span>
+    </header>
+    <main class="task-container">
+            <section class="task-shadow">
+                <div class="task-editor task">
+                    <span>+</span>
+                    <input type="text" name="task" id="task-input" placeholder="Add a task" autofocus>
+                </div>
+                <div class="task-controller">
+                    <button type="button" id="addbtn" disabled>Add</button>
+                </div>
+            </section>
+            <div class="task-tabs">
+                <a href="/"><div class="tab">Active</div></a>
+                <a href="/completed.html"><div class="active-tab tab">Completed</div></a>
+            </div>
+            <section id="saved-tasks" class="saved-tasks"></section>
+    </main>
+    <script src="/uiControl.js"></script>
+    <script type="module" src="index.mjs"></script>
+</body>
+</html>
