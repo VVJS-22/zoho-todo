@@ -51,12 +51,13 @@ editBtns.forEach(btn => {
         btnParent.replaceChild(saveBtn, btn);
 
         saveBtns = document.querySelectorAll(".save-btn");
-        saveBtns.forEach(btn => {
-            btn.addEventListener("click", () => {
-                const id = btn.parentElement.parentElement.id;
+        saveBtns.forEach(sbtn => {
+            sbtn.addEventListener("click", () => {
+                const id = sbtn.parentElement.parentElement.id;
                 const task = elem.querySelector(".editable-task")
                 editTodo(id, task.value)
                 task.setAttribute("readonly", "");
+                btnParent.replaceChild(btn, sbtn);
             })
         })
     })
