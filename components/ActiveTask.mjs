@@ -8,6 +8,7 @@ export const ActiveTask = ({id, task}) => {
         </div>
         <div class="task-buttons">
             <img class="btn edit-btn" title="Edit" src="/assets/edit.svg" alt="edit">
+            <img class="save-btn hide" title="Save" src="/assets/save.svg" alt="save">
             <img class="btn delete-btn" title="Delete" src="/assets/delete.svg" alt="delete">
         </div>
     </div>`
