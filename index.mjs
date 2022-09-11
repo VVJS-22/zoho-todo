@@ -12,14 +12,11 @@ import { renderTodos } from "./helpers/renderTodos.mjs";
 
 */
 
-// Base UI operations Begins
-
 const editor = document.querySelector(".task-editor");
 editor.addEventListener("click", (e) => {
     e.stopPropagation()
     input.focus()
 })
-
 const input = document.querySelector("#task-input");
 input.addEventListener("input", () => {
     if (input.value !== "") {
@@ -30,10 +27,6 @@ input.addEventListener("input", () => {
 
 renderTodos();
 
-// Render Todos Ends
-
-
-// Add Todo Begins 
 
 const addTodoUi = (event) => {
     if (event.keyCode === 13 || event.target.id === "addbtn") {
@@ -52,7 +45,6 @@ const addTodoUi = (event) => {
 
 const addBtn = document.querySelector("#addbtn");
 addBtn.addEventListener("click", addTodoUi);
-
 document.addEventListener("keydown", addTodoUi);
 
 
