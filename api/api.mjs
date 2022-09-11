@@ -1,6 +1,6 @@
 export const addTodo = (task) => {
     const todos = getTodos() || setTodos({})
-    const id = (Object.keys(todos).length + 1).toString()
+    const id = (Object.keys(todos).length + 1).toString() + "-" + Date.now();
     todos[id] = {
         id,
         task,
