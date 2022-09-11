@@ -1,7 +1,5 @@
-import { addTodo } from "./api/api.mjs";
+import { createTodo } from "./helpers/createTodo.mjs";
 import { renderTodos } from "./helpers/renderTodos.mjs";
-
-
 /*
 1. Render Items on every change.
 2. Operations:
@@ -11,13 +9,14 @@ import { renderTodos } from "./helpers/renderTodos.mjs";
     4) Delete Todo
 
 */
-
+const addBtn = document.querySelector("#addbtn");
 const editor = document.querySelector(".task-editor");
+const input = document.querySelector("#task-input");
+
 editor.addEventListener("click", (e) => {
     e.stopPropagation()
     input.focus()
 })
-const input = document.querySelector("#task-input");
 input.addEventListener("input", () => {
     if (input.value !== "") {
         return addBtn.removeAttribute("disabled")
@@ -26,26 +25,8 @@ input.addEventListener("input", () => {
 })
 
 renderTodos();
-
-
-const addTodoUi = (event) => {
-    if (event.keyCode === 13 || event.target.id === "addbtn") {
-        const task = input.value;
-        if (task.length) {
-            addTodo(task);
-            input.value = "";
-            input.focus();
-            addBtn.setAttribute("disabled", "")
-            renderTodos();
-        } else {
-            alert("Yeah, yout heart is white but I want more than that!")
-        }
-    }
-}
-
-const addBtn = document.querySelector("#addbtn");
-addBtn.addEventListener("click", addTodoUi);
-document.addEventListener("keydown", addTodoUi);
+addBtn.addEventListener("click", createTodo);
+document.addEventListener("keydown", createTodo);
 
 
 

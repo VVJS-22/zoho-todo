@@ -19,10 +19,10 @@ const renderItems = (todos, type) => {
                 activesHtml += type ? ActiveTask(todos[item]) : CompletedTask(todos[item]);
             }
         }
-        tasks.innerHTML = activesHtml;
+        if (activesHtml.length) tasks.innerHTML = activesHtml;
 
         const ticks = document.querySelectorAll(".tick");
-        changeActive(ticks);
+        changeActive(ticks, type);
 
         const editBtns = document.querySelectorAll(".edit-btn");
         alterTodo(editBtns);
@@ -31,13 +31,13 @@ const renderItems = (todos, type) => {
         saveTodo(saveBtns);
 
         const deleteBtns = document.querySelectorAll(".delete-btn");
-        removeTodo(deleteBtns);
+        removeTodo(deleteBtns, type);
 
         if (!tasks.hasChildNodes()) {
-            tasks.innerHTML = NoTasks("active")
+            tasks.innerHTML = type ? NoTasks("active") : NoTasks("completed");
         }
     } else {
-        tasks.innerHTML = NoTasks("active");
+        tasks.innerHTML = type ? NoTasks("active") : NoTasks("completed");
     }
 }
 

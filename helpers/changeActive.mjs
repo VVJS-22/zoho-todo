@@ -1,12 +1,18 @@
-import { renderTodos } from "./renderTodos.mjs";
+import { NoTasks } from "../components/NoTasks.mjs";
 import { toggleTodo } from "../api/api.mjs";
 
-export const changeActive = (elements) => {
+export const changeActive = (elements, type) => {
     elements.forEach(item => {
         item.addEventListener("click", () => {
-            const id = item.parentElement.parentElement.id;
+            const element = item.parentElement.parentElement;
+            const parent = element.parentElement;
+            const id = element.id;
             toggleTodo(id);
-            renderTodos();
+            element.remove();
+            const children = Array.from(parent.childNodes).filter(child => child.nodeName !== "#text")
+            if(!children.length) {
+                parent.innerHTML = type ? NoTasks("active") : NoTasks("completed");
+            }
         })
     })
 }
