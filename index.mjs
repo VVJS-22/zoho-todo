@@ -1,5 +1,5 @@
-import { createTodo } from "./helpers/createTodo.mjs";
-import { renderTodos } from "./helpers/renderTodos.mjs";
+import { createTodo } from "./helpers/create/createTodo.mjs";
+import { renderTodos } from "./helpers/read/renderTodos.mjs";
 /*
 1. Render Items on every change.
 2. Operations:

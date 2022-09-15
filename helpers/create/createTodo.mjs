@@ -1,5 +1,5 @@
-import { addTodo } from "../api/api.mjs";
-import { renderTodos } from "./renderTodos.mjs";
+import { addTodo } from "../../api/api.mjs";
+import { renderTodos } from "../read/renderTodos.mjs";
 
 const input = document.querySelector("#task-input");
 const addBtn = document.querySelector("#addbtn");

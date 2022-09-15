@@ -1,3 +1,5 @@
+import { swapWithSibiling } from "../swapWithSibiling.mjs"
+
 export const alterTodo = (elements) => {
     elements.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -8,10 +10,7 @@ export const alterTodo = (elements) => {
             task.setSelectionRange(end, end);
             task.focus()
 
-            const btnParent = btn.parentElement
-            const saveBtn = btnParent.querySelector(".save-btn")
-            btn.classList.add("hide");
-            saveBtn.classList.remove("hide");
+            swapWithSibiling(btn, "save-btn");
         })
     })
 }

@@ -1,13 +1,13 @@
-import { ActiveTask } from "../components/ActiveTask.mjs"
-import { CompletedTask } from "../components/CompletedTask.mjs";
-import { NoTasks } from "../components/NoTasks.mjs";
+import { ActiveTask } from "../../components/ActiveTask.mjs"
+import { CompletedTask } from "../../components/CompletedTask.mjs";
+import { NoTasks } from "../../components/NoTasks.mjs";
 
-import { getTodos, setTodos } from "../api/api.mjs";
+import { getTodos, setTodos } from "../../api/api.mjs";
 
-import { changeActive } from "./changeActive.mjs";
-import { alterTodo } from "./alterTodo.mjs";
-import { saveTodo } from "./saveTodo.mjs";
-import { removeTodo } from "./removeTode.mjs";
+import { changeActive } from "../edit/changeActive.mjs";
+import { alterTodo } from "../edit/alterTodo.mjs";
+import { saveTodo } from "../edit/saveTodo.mjs";
+import { removeTodo } from "../delete/removeTode.mjs";
 
 const renderItems = (todos, type) => {
     const tasks = document.querySelector("#saved-tasks");
